@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
+Route::get('/', [HomeController::class, 'index']);
+Route::post('/', [HomeController::class, 'contact'])->name('contact.post');
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
+
+// Route::get('/404', function() {
+//     return view('frontend.404');
+// });
+
+Route::get('/form-tamamlandi', function() {
+    return view('frontend.success');
 });
+

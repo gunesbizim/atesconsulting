@@ -1,0 +1,101 @@
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #banner .verticalAlign,
+    .centerAlign {
+        position: initial !important;
+        top: initial !important;
+        left: initial !important;
+        transform: initial !important;
+    }
+
+    .centerAlign {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .centerAlign .sectionHeader {
+        margin-bottom: 30px;
+    }
+
+    #whatHow .col-lg-6.position-relative {
+        order: 3;
+    }
+
+    #whatHow .row {
+        padding: 0 30px;
+    }
+
+    .mobileBorder {
+        border-bottom: 1px solid #E0E0E0;
+        margin-bottom: 50px;
+    }
+
+    .hideMobile {
+        display: none;
+    }
+
+    .owl-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    #banner .verticalAlign,
+    .centerAlign {
+        position: initial !important;
+        top: initial !important;
+        left: initial !important;
+        transform: initial !important;
+    }
+    .centerAlign{
+        padding: 30px;
+        text-align: center;
+    }
+    .centerAlign .sectionHeader{
+        margin-bottom: 30px;
+    }
+    #whatHow .col-lg-6.position-relative{
+        order:3;
+    }
+    #whatHow .row{
+        padding: 0 30px;
+    }
+    .mobileBorder{
+        border-bottom: 1px solid #E0E0E0;
+        margin-bottom: 50px;
+    }
+    .hideMobile {display: none;}
+    .owl-nav{display:none;}
+}
+
+@media (max-width: 575.98px) {
+    #banner .verticalAlign,
+    .centerAlign {
+        position: initial !important;
+        bottom: initial !important;
+        left: initial !important;
+        transform: initial !important;
+    }
+    .centerAlign {
+        padding: 30px;
+        text-align: center;
+    }
+    .centerAlign .sectionHeader {
+        margin-bottom: 30px;
+    }
+    #whatHow .col-lg-6.position-relative {
+        order: 3;
+    }
+    #whatHow .row {
+        padding: 0 30px;
+    }
+    .mobileBorder {
+        border-bottom: 1px solid #E0E0E0;
+        margin-top: 50px;
+    }
+    .hideMobile {display: none;}
+    .owl-nav {
+        display: none;
+    }
+}
