@@ -45,7 +45,7 @@ $(function(){
                 } else {
                     if( !!result.errors ){
                         $('.contact-form-error').html(
-                            laravelValidationErrors2Html(result.errors)
+                            laravelValidationErrors2Html(form, result.errors)
                         )
                     }
                 }
@@ -54,7 +54,7 @@ $(function(){
     })
 })
 
-function laravelValidationErrors2Html(errors){
+function laravelValidationErrors2Html(form, errors){
     return Object.keys(errors).map((name, i) => {
         let pattern = new RegExp( "(The[ ]+)" + name +  "([ ]+)" )
 
