@@ -40,10 +40,30 @@ $(function(){
         } else{
             $.post(url, data, function (result) {
 
-                if (result.status == 'success') {
+                if (result.success == true) {
                     window.location.href = 'https://atesconsulting.com/form-tamamlandi';
+                } else {
+                    if( !!result.errors ){
+                        $('.contact-form-error').html(
+                            laravelValidationErrors2Html(result.errors)
+                        )
+                    }
                 }
             });
         }
     })
 })
+
+function laravelValidationErrors2Html(errors){
+    return Object.keys(errors).map((name, i) => {
+        let pattern = new RegExp( "(The[ ]+)" + name +  "([ ]+)" )
+
+        let message = errors[name].join();
+
+        let label = form.find(`label[for="${name}"]`)
+            .html();
+
+        return message.replace(pattern, "$1<strong>" + label + "</strong>$2");
+
+    }).join("<br>")
+}

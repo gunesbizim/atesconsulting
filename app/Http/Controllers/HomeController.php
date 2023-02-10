@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Mail;
 
 class HomeController extends Controller
@@ -14,9 +15,26 @@ class HomeController extends Controller
 
 
     public function contact(Request $request) {
+
+        // $request->validate([
+            // ]);
+        $validator = Validator::make($request->all(), [
+            'namesurname' => 'required|min:3',
+            'email' => 'email:rfc,dns'
+        ]);
+
+        if ($validator->fails()) {    
+            return response()
+                ->json([
+                    'success' => false,
+                    'errors' => $validator->messages()
+                ]);
+        }
+        
         $to_name = "Contact Form";
         $to_email = env('REQUEST_RECEIVER_MAIL' , "info@atesconsulting.com");
         $mail_sender = $request['email'];
+
         $data = [
             'list' =>[
                 'namesurname' => $request->namesurname,
@@ -45,7 +63,7 @@ class HomeController extends Controller
 
         return response()
             ->json([
-                'status' => 'success'
+                'success' => true
             ]);
 
         return view('frontend.success');
